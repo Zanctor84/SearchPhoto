@@ -1,0 +1,31 @@
+
+
+<div class="form-group">
+  <input [formControl]="inputControl" type="search" class="form-control" placeholder="Find images">
+</div>
+<pagination-controls class="text-right" (pageChange)="p = $event"></pagination-controls>
+<div  *ngIf="(images$ | async)?.length; else empty" class="row">
+  <div class="col-sm-12 col-md-6 col-lg-4 p-3" *ngFor="let image of (images$ | async) | paginate: { itemsPerPage: 9, currentPage: p }">
+    <div class="card">
+      <a href="{{image.url}}_b.jpg" target="_blank">
+        <img src="{{image.url}}_m.jpg" title="{{image.title}}">
+      </a>
+      <button *ngIf="isBookmarked(image); else bookmarkBtn" class="btn btn-primary"
+              (click)="removeImageFromBookmarks(image)">Remove From Bookmarks</button>
+      <ng-template #bookmarkBtn>
+        <button class="btn btn-primary"
+                (click)="addImageToBookmarks(image)">Bookmark it!</button>
+      </ng-template>
+      <span>{{image.title}}</span>
+    </div>
+  </div>
+</div>
+
+<ng-template #empty>
+
+  <h5 class="text-left">No image here. Would you try to search for anything else?</h5>
+  <div class="clear-desc">
+
+  </div>
+
+</ng-template>

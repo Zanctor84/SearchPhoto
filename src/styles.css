@@ -1,0 +1,78 @@
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 250px;
+}
+.container-flickr {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.navbar-light {
+  background-color: #ccc;
+}
+.form-group {
+  padding-top: 15px;
+}
+.form-group input {
+  font-style: italic;
+}
+.clear-desc {
+  display: none;
+}
+.main-flickr {
+  display: flex;
+}
+.main-flickr .col-md-1 a{
+  display: flex;
+  color: #000;
+}
+.main-flickr .col-md-1{
+  width: 120px;
+  max-width: 120px;
+  border: 2px solid black;
+  min-height: 85vh;
+  height: 100%;
+}
+.main-flickr .col-md-1 a{
+  padding: 15px 0;
+}
+
+.main-flickr ul {
+  list-style: none;
+  padding: 0;
+}
+.container-flickr mat-icon {
+  font-size: 40px;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.container-flickr .active{
+  border: 1px solid #000;
+}
+
+.form-inline img {
+  width: 24px;
+  height: 24px;
+}
+footer {
+  background-color: #ccc;
+  padding: 15px 0;
+  height: auto;
+}
+footer h4 {
+  padding-left: 15px;
+}
+.card .btn{
+  max-width: 120px;
+  margin: 5px;
+  box-shadow: 0 5px 5px 2px #000;
+}
+.card .btn:hover {
+  color: red;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,27 @@
+
+<!--<div  *ngIf="(images$ | async)?.length; else empty" class="row">-->
+
+<!--</div>-->
+
+<pagination-controls class="text-right" (pageChange)="p = $event"></pagination-controls>
+  <div  *ngIf="(bookmarks$ | async)?.length; else empty" class="row">
+
+    <div class="col-sm-12 col-md-6 col-lg-4 p-3" *ngFor="let image of (bookmarks$ | async)| paginate: { itemsPerPage: 6, currentPage: p }">
+      <div class="card">
+        <a href="{{image.url}}_b.jpg" target="_blank">
+          <img src="{{image.url}}_m.jpg" title="{{image.title}}">
+        </a>
+        <button class="btn btn-primary"
+                (click)="removeImageFromBookmarks(image)"
+        >Remove it!</button>
+        <span>{{image.title}}</span>
+      </div>
+    </div>
+  </div>
+
+<ng-template #empty>
+
+  <h5>No image here. Bookmarks image first.</h5>
+
+</ng-template>
+

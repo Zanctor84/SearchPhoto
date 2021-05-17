@@ -1,0 +1,44 @@
+<nav class="navbar navbar-light">
+  <a class="navbar-brand">Image Finder</a>
+  <form class="form-inline">
+    <mat-icon> person_pin</mat-icon>
+  </form>
+</nav>
+<div class="container-flickr">
+  <div class="main-flickr">
+    <div class="col-md-1">
+
+      <ul>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a [routerLink]="['/']" >
+            <mat-icon>cloud</mat-icon>
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['/selected']">
+            <mat-icon>library_books</mat-icon>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+    <div class="col-md-10">
+      <router-outlet></router-outlet>
+
+      <div>
+        <!--<div-->
+        <!--class="search-results"-->
+        <!--infiniteScroll-->
+        <!--[infiniteScrollDistance]="2"-->
+        <!--[infiniteScrollThrottle]="50"-->
+        <!--(scrolled)="onScroll()">-->
+        <!--</div>-->
+      </div>
+
+    </div>
+
+  </div>
+  <footer>
+    <h4>Copyrights</h4>
+  </footer>
+</div>
